@@ -1,0 +1,199 @@
+{
+  "_scipy_available": false,
+  "_inferential_method": "pure_python",
+  "H1": {
+    "n": 833,
+    "general_llm": {
+      "acc_mean": 0.5493,
+      "acc_std": 0.337,
+      "interp_mean": 0.2839
+    },
+    "plain_rag": {
+      "acc_mean": 0.3164,
+      "acc_std": 0.3852
+    },
+    "rule_rag": {
+      "acc_mean": 0.5006,
+      "acc_std": 0.3631,
+      "interp_mean": 1.0
+    },
+    "ttest_rule_vs_general": {
+      "df": 832,
+      "t": -3.7852,
+      "p": 0.00016463834875602622,
+      "mean_diff": -0.0487,
+      "cohen_d": -0.1312,
+      "method": "pure_python"
+    },
+    "ttest_rule_vs_plain": {
+      "df": 832,
+      "t": 13.2297,
+      "p": 2.1172151449403573e-36,
+      "mean_diff": 0.1842,
+      "cohen_d": 0.4587,
+      "method": "pure_python"
+    }
+  },
+  "H2": {
+    "by_scenario": {
+      "compliance": {
+        "n": 333,
+        "general_llm": 0.5351,
+        "plain_rag": 0.1922,
+        "rule_rag": 0.4866,
+        "gain_vs_general": -0.0485
+      },
+      "marketing": {
+        "n": 380,
+        "general_llm": 0.5378,
+        "plain_rag": 0.4321,
+        "rule_rag": 0.5166,
+        "gain_vs_general": -0.0212
+      },
+      "product": {
+        "n": 120,
+        "general_llm": 0.6254,
+        "plain_rag": 0.295,
+        "rule_rag": 0.4892,
+        "gain_vs_general": -0.1363
+      }
+    },
+    "anova": {
+      "F": 4.416,
+      "p": 0.012367364311337824,
+      "groups": [
+        "compliance",
+        "marketing",
+        "product"
+      ],
+      "method": "pure_python"
+    },
+    "tukey": {
+      "method": "pure_python_bonferroni_t",
+      "comparisons": [
+        {
+          "group1": "compliance",
+          "group2": "marketing",
+          "meandiff": 0.0273,
+          "p_raw": 0.33706526579752716,
+          "p_adj": 1.0,
+          "reject": false
+        },
+        {
+          "group1": "compliance",
+          "group2": "product",
+          "meandiff": -0.0877,
+          "p_raw": 0.013922676802587847,
+          "p_adj": 0.04176803040776354,
+          "reject": true
+        },
+        {
+          "group1": "marketing",
+          "group2": "product",
+          "meandiff": -0.1151,
+          "p_raw": 0.0009414776285787084,
+          "p_adj": 0.002824432885736125,
+          "reject": true
+        }
+      ]
+    }
+  },
+  "H3": {
+    "general_llm": {
+      "mean": 0.2839,
+      "std": 0.2057,
+      "median": 0.25
+    },
+    "plain_rag": {
+      "mean": 0.6402,
+      "std": 0.243,
+      "median": 0.5
+    },
+    "rule_rag": {
+      "mean": 1.0,
+      "std": 0.0,
+      "median": 1.0
+    },
+    "wilcoxon_rule_vs_general": {
+      "W": 0.0,
+      "p": 1.9479027105295256e-142,
+      "z": -25.4101,
+      "n_nonzero": 829,
+      "method": "pure_python"
+    }
+  },
+  "H5": {
+    "by_type": {
+      "fact": {
+        "n": 470,
+        "general_llm": 0.5298,
+        "plain_rag": 0.3746,
+        "rule_rag": 0.5141,
+        "rule_gain": -0.0157
+      },
+      "compare": {
+        "n": 166,
+        "general_llm": 0.528,
+        "plain_rag": 0.222,
+        "rule_rag": 0.4398,
+        "rule_gain": -0.0882
+      },
+      "reasoning": {
+        "n": 197,
+        "general_llm": 0.6139,
+        "plain_rag": 0.2574,
+        "rule_rag": 0.5197,
+        "rule_gain": -0.0941
+      }
+    },
+    "two_way_anova": {
+      "C(qtype)": {
+        "F": 9.1002,
+        "p": 0.00011540408085167928
+      },
+      "C(method)": {
+        "F": 106.2761,
+        "p": 5.1219665752891874e-45
+      },
+      "C(qtype):C(method)": {
+        "F": 4.8874,
+        "p": 0.000632067511451821
+      },
+      "Residual": {
+        "F": null,
+        "p": null
+      },
+      "method": "pure_python_unweighted_means"
+    }
+  },
+  "error_analysis": {
+    "correct_or_partial": {
+      "count": 498,
+      "pct": 59.8
+    },
+    "retrieval_fail": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "rule_missing": {
+      "count": 30,
+      "pct": 3.6
+    },
+    "hallucination": {
+      "count": 298,
+      "pct": 35.8
+    },
+    "annotation_dispute": {
+      "count": 7,
+      "pct": 0.8
+    }
+  },
+  "total_questions": 833,
+  "kb_size": 7508,
+  "_meta": {
+    "time": "2026-07-21T10:32:20",
+    "model": "deepseek-chat",
+    "scoring": "LLM评委(0-100归一)",
+    "api_available": true
+  }
+}
