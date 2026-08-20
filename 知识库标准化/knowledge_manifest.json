@@ -1,0 +1,21 @@
+{
+  "knowledge_version": "ksa-20260820-v1",
+  "country": "SAU",
+  "scope": [
+    "compliance",
+    "literature",
+    "cases",
+    "question-answer"
+  ],
+  "generated_at": "2026-08-20T09:10:21Z",
+  "source_revision": "main@298f72b2a231e3bc0a50e49b7459e157633b8f45",
+  "counts": {
+    "unified_corpus_v3.jsonl": 588,
+    "paper_chunks.jsonl": 2348,
+    "compliance_corpus.jsonl": 1856,
+    "platform_expression_corpus.jsonl": 150,
+    "vat_tax_corpus.jsonl": 93,
+    "compliance_pdfs_extra.jsonl": 89
+  },
+  "notes": "First-pass normalized corpora from existing curated datasets and repository PDFs. All records require provenance-aware review before production use."
+}
